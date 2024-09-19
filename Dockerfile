@@ -14,7 +14,8 @@ COPY . /app/
 RUN chmod +x ./mvnw
 
 # Ejecutar Maven para compilar e instalar las dependencias del proyecto
-RUN ./mvnw -DskipTests clean install -Dmaven.compiler.release=22 -Dmaven.compiler.failOnError=false
+# RUN ./mvnw -DskipTests clean install -Dmaven.compiler.release=22 -Dmaven.compiler.failOnError=false
+RUN ./mvnw clean install -DskipTests
 
 # Limpiar las dependencias no necesarias
 RUN mvn clean
