@@ -2,7 +2,7 @@
 FROM openjdk:22-ea-jdk
 
 # Instalar Maven
-RUN apt-get update && apt-get install -y maven
+RUN apk add --no-cache maven
 
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
