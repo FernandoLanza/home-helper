@@ -16,6 +16,8 @@ RUN chmod +x ./mvnw
 # Ejecutar Maven para compilar e instalar las dependencias del proyecto
 # RUN ./mvnw -DskipTests clean install -Dmaven.compiler.release=22 -Dmaven.compiler.failOnError=false
 RUN ./mvnw clean install -DskipTests
+RUN cp target/servicios-tecnicos-0.0.1-SNAPSHOT.jar /app/jar/
+CMD ["java", "-jar", "/app/jar/servicios-tecnicos-0.0.1-SNAPSHOT.jar"]
 
 # Limpiar las dependencias no necesarias
 RUN mvn clean
@@ -24,4 +26,5 @@ RUN mvn clean
 EXPOSE 8080
 
 # Comando para ejecutar la aplicación
-CMD ["java", "-jar", "target/servicios-tecnicos-0.0.1-SNAPSHOT.jar"]
+# CMD ["java", "-jar", "target/servicios-tecnicos-0.0.1-SNAPSHOT.jar"]
+#CMD ["java", "-jar", "/app/target/servicios-tecnicos-0.0.1-SNAPSHOT.jar"]
