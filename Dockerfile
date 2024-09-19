@@ -1,7 +1,7 @@
-# Usar la imagen de Java 22 como base
-FROM openjdk:22-ea-jdk
+# Usar la imagen de Java 22 basada en Debian como base
+FROM openjdk:22-ea-jdk-slim
 
-# Instalar Maven usando apt-get (la imagen base no usa apk)
+# Instalar Maven usando apt-get
 RUN apt-get update && apt-get install -y maven
 
 # Establecer el directorio de trabajo dentro del contenedor
