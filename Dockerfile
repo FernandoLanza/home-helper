@@ -14,7 +14,6 @@ COPY . /app/
 RUN chmod +x ./mvnw
 
 # Ejecutar Maven para compilar e instalar las dependencias del proyecto
-# RUN ./mvnw -DskipTests clean install -Dmaven.compiler.release=22 -Dmaven.compiler.failOnError=false
 RUN ./mvnw clean install -DskipTests
 RUN mkdir /app/jar
 RUN cp target/servicios-tecnicos-0.0.1-SNAPSHOT.jar /app/jar/
