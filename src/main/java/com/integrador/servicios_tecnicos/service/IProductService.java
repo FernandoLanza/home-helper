@@ -15,9 +15,7 @@ public interface IProductService {
 
     Product createNewProduct(ProductRequestDTO productRequestDTO);
 
-    List<ProductNameDTO> getAllProducts();
+    List<Product> getAllProducts();
 
-    List<ProductDetailsResponseDTO> getAllProductsWithChar();
-
-    Product editProduct(ProductRequestDTO productRequestDTO, Long id) throws ResourceNotFoundException;
+    Product editProduct(ProductRequestDTO productRequestDTO,Long id) throws ResourceNotFoundException;
 }

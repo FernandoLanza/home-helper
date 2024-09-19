@@ -2,6 +2,8 @@ package com.integrador.servicios_tecnicos.models.dtos.products;
 
 import com.integrador.servicios_tecnicos.models.entity.Category;
 import com.integrador.servicios_tecnicos.models.entity.Characteristic;
+import com.integrador.servicios_tecnicos.models.entity.Reservation;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +19,7 @@ import java.util.List;
 @Builder
 public class ProductRequestDTO {
     @NotNull(message = "Category ID is required")
-    private Category category;
+    private Long categoryId;
 
     @NotNull(message = "Product type is required")
     @Size(max = 100, message = "Product name must be less than 100 characters")
@@ -33,7 +35,9 @@ public class ProductRequestDTO {
     @Digits(integer = 8, fraction = 2, message = "Price must be a valid monetary amount with up to 8 integer digits and 2 fractional digits")
     private BigDecimal price;
 
-    @NotEmpty(message = "characteristics are required")
+//    @NotEmpty(message = "characteristics are required")
     private List<Characteristic> characteristics;
 
+    @NotNull(message = "urlImage is required")
+    private String urlImage;
 }
