@@ -1,8 +1,8 @@
 # Usar la imagen de Java 22 como base
 FROM openjdk:22-ea-jdk
 
-# Instalar Maven
-RUN apk add --no-cache maven
+# Instalar Maven usando apt-get (la imagen base no usa apk)
+RUN apt-get update && apt-get install -y maven
 
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
