@@ -51,7 +51,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowedOrigins(List.of(
-                "http://proyecto-final-dh-frontend.vercel.app",
+                "https://proyecto-final-dh-frontend.vercel.app",
                 "https://proyecto-final-dh-frontend-7wo6wujt0-pablo-kraiuks-projects.vercel.app"));
         corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
         corsConfiguration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
