@@ -4,6 +4,7 @@ import com.integrador.servicios_tecnicos.exceptions.ResourceNotFoundException;
 import com.integrador.servicios_tecnicos.models.dtos.reservation.RequestDTO;
 import com.integrador.servicios_tecnicos.models.entity.Reservation;
 import com.integrador.servicios_tecnicos.service.impl.ReservationService;
+import jakarta.mail.MessagingException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class ReservationController {
     }
 
     @PostMapping("/new")
-    public ResponseEntity<Reservation> saveReservation(@RequestBody RequestDTO requestDTO) throws ResourceNotFoundException {
+    public ResponseEntity<Reservation> saveReservation(@RequestBody RequestDTO requestDTO) throws ResourceNotFoundException, MessagingException {
         return new ResponseEntity<>(reservationService.saveReservation(requestDTO), HttpStatus.CREATED);
     }
 
